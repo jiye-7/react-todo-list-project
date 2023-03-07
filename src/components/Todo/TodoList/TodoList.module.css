@@ -1,8 +1,12 @@
-.list {
+.container {
+  width: 100%;
   flex-basis: 80%;
+  overflow-y: scroll;
+}
+
+.todos {
   display: flex;
   flex-direction: column;
   background-color: var(--navy-color);
-  overflow-y: scroll;
-  padding: 1rem 0.1rem;
+  padding: 1rem 0 1rem;
 }

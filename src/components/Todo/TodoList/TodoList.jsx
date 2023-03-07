@@ -1,52 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 import styles from './TodoList.module.css';
 
-const todoList = [
+const list = [
   {
     id: 1,
-    title: '공부하기',
-    completed: false,
+    content: '공부하기',
+    status: 'active',
   },
   {
     id: 2,
-    title: '책 읽기',
-    completed: false,
+    content: '책 읽기',
+    status: 'active',
   },
   {
     id: 3,
-    title:
-      '강의 보기 강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기강의 보기',
-    completed: true,
+    content: '강의 보기',
+    status: 'completed',
   },
   {
     id: 4,
-    title: '운동 하기',
-    completed: false,
+    content: '운동 하기',
+    status: 'active',
   },
   {
     id: 5,
-    title: '커피 마시기',
-    completed: false,
+    content: '커피 마시기',
+    status: 'active',
   },
   {
     id: 6,
-    title: '병원 가기',
-    completed: false,
+    content: '병원 가기',
+    status: 'active',
   },
   {
     id: 7,
-    title: '통화 하기',
-    completed: true,
+    content: '통화 하기',
+    status: 'completed',
+  },
+  {
+    id: 8,
+    content: '알고리즘 공부하기',
+    status: 'active',
+  },
+  {
+    id: 9,
+    content: '프로젝트 만들기',
+    status: 'active',
+  },
+  {
+    id: 10,
+    content: '포트폴리오 만들기',
+    status: 'completed',
   },
 ];
 
 export default function TodoList() {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    setTodos([...list]);
+  }, []);
+
   return (
-    <div className={styles.list}>
-      {todoList?.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} />
-      ))}
-    </div>
+    <section className={styles.container}>
+      <ul className={styles.todos}>
+        {todos?.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} />
+        ))}
+      </ul>
+    </section>
   );
 }
