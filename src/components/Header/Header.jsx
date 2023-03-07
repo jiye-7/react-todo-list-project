@@ -4,7 +4,7 @@ import { HiSun } from 'react-icons/hi';
 
 export default function Header() {
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <ul className={styles.header}>
         <li>
           <HiSun />
@@ -13,6 +13,6 @@ export default function Header() {
         <li>Active</li>
         <li>Completed</li>
       </ul>
-    </div>
+    </header>
   );
 }
