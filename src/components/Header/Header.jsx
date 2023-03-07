@@ -5,7 +5,7 @@ import { HiSun } from 'react-icons/hi';
 export default function Header() {
   return (
     <div className={styles.container}>
-      <ul>
+      <ul className={styles.header}>
         <li>
           <HiSun />
         </li>

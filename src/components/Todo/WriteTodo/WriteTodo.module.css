@@ -1,10 +1,11 @@
-.write {
+.container {
   flex-basis: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--dark-purple-color);
   border-radius: 0 0 1rem 1rem;
+  padding: 1rem 0;
 }
 
 input {

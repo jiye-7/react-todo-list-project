@@ -3,9 +3,9 @@ import styles from './WriteTodo.module.css';
 
 export default function WriteTodo() {
   return (
-    <div className={styles.write}>
+    <section className={styles.container}>
       <input type='text' placeholder='Add Todo' />
       <button>Add</button>
-    </div>
+    </section>
   );
 }
