@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.left_item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.left_item input {
+  flex-basis: 5%;
+  width: 2rem;
+  height: 1.1rem;
+  margin-right: 5px;
+}
+
+.left_item label {
+  flex-basis: 95%;
+  color: white;
+}
+
+.right_item {
+  color: white;
+  background-color: gray;
+  border-radius: 50%;
+  padding: 0.3rem 0.35rem 0.2rem;
+}

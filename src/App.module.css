@@ -8,8 +8,8 @@
   --dark-purple-color: #2e294e;
   --medium-purple-color: #aaabd3;
   --light-purple-color: #cba6c3;
-  --darkmode-background-color: #aaabd3;
-  --rightmode-background-color: #f8ecc9;
+  --darkMode-background-color: #aaabd3;
+  --rightMode-background-color: #f8ecc9;
 }
 
 body {
@@ -18,18 +18,12 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: var(--darkmode-background-color);
-}
-
-ul {
-  list-style: none;
+  background-color: var(--darkMode-background-color);
 }
 
 .app {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  width: 37vw;
   height: 70vh;
-  background-color: var(--navy-color);
-  border-radius: 1rem;
 }
