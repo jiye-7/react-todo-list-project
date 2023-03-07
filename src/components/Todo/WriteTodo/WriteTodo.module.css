@@ -1,0 +1,26 @@
+.write {
+  flex-basis: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-purple-color);
+  border-radius: 0 0 1rem 1rem;
+}
+
+input {
+  height: 2.8rem;
+  flex-basis: 75%;
+  border-radius: 0.4rem 0 0 0.4rem;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+}
+
+button {
+  height: 2.8rem;
+  flex-basis: 15%;
+  color: white;
+  background-color: var(--pink-color);
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
