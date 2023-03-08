@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styles from './WriteTodo.module.css';
 
-export default function WriteTodo() {
-  const lastItemKeyPlus1 = localStorage.length + 1;
+export default function WriteTodo({ todos, handleCreateTodo }) {
   const [inputValue, setInputValue] = useState('');
   // 새로운 todo를 만듦
   // input값에 공백이 있을 경우 공백 제거하여 등록
@@ -13,20 +12,18 @@ export default function WriteTodo() {
   };
 
   const valueExist = () => {
-    if (inputValue.length) {
+    if (inputValue.trim().length) {
       createTodo(inputValue);
     }
   };
 
   const createTodo = (inputValue) => {
-    localStorage.setItem(
-      lastItemKeyPlus1,
-      JSON.stringify({
-        id: lastItemKeyPlus1,
-        content: inputValue.trim(),
-        status: 'active',
-      })
-    );
+    // 문자열을 가져와서 객체로 만든 후, 해당 배열에 값을 추가한다.
+    handleCreateTodo({
+      id: todos.length + 1,
+      content: inputValue.trim(),
+      status: 'active',
+    });
     setInputValue('');
   };
 
