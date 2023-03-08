@@ -7,10 +7,9 @@ import styles from './TodoList.module.css';
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
+  const localStorageData = [];
 
   useEffect(() => {
-    const localStorageData = [];
-
     // localStorage.key(index) index: 반환받으려하는 key의 번호를 나타내는 정수. 이 정수는 0부터 시작하는 인덱스
     for (let i = 0; i < localStorage.length; i++) {
       localStorageData.push(
@@ -23,8 +22,8 @@ export default function TodoList() {
   return (
     <section className={styles.container}>
       <ul className={styles.todos}>
-        {todos?.map((todo) => (
-          <TodoItem key={todo?.id} todo={todo} />
+        {todos?.map((todo, idx) => (
+          <TodoItem key={idx} todo={todo} />
         ))}
       </ul>
     </section>
