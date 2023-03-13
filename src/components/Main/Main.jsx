@@ -15,12 +15,13 @@ export default function Main() {
   };
 
   // checkbox handler
-  const handleCompleted = (todoId) => {
+  const handleUpdate = (updateTodo) => {
     // id가 같은 todo 가져와서 완료/진행중 여부 상태값 변경하고 state update
+    setTodos(todos.map((t) => (t.id === updateTodo.id ? updateTodo : t)));
   };
 
   // delete todo
-  const handleDeleteTodo = (todoId) => {
+  const handleDelete = (todoId) => {
     setTodos(todos.filter((todo) => todo.id !== todoId));
   };
 
@@ -37,7 +38,11 @@ export default function Main() {
 
   return (
     <div className={styles.container}>
-      <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
+      <TodoList
+        todos={todos}
+        handleUpdate={handleUpdate}
+        handleDelete={handleDelete}
+      />
       <WriteTodo todos={todos} handleAddTodo={handleAddTodo} />
     </div>
   );
