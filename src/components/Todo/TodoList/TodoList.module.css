@@ -1,12 +1,12 @@
 .container {
   width: 100%;
   flex-basis: 80%;
-  overflow-y: scroll;
+  overflow-y: auto;
+  background-color: var(--navy-color);
 }
 
 .todos {
   display: flex;
   flex-direction: column;
-  background-color: var(--navy-color);
   padding: 1rem 0 1rem;
 }

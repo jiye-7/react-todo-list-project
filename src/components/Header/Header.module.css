@@ -24,11 +24,14 @@
   font-size: 1.5rem;
 }
 
-.header li:not(:first-child) {
+.header li:not(:first-child) > button {
   flex-basis: 10%;
   color: var(--pink-color);
+  background-color: transparent;
+  font-size: 1.2rem;
 }
 
-li:hover {
+ul li:hover,
+button {
   cursor: pointer;
 }

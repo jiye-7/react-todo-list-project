@@ -2,17 +2,21 @@ import React from 'react';
 import styles from './Header.module.css';
 import { HiSun } from 'react-icons/hi';
 
-export default function Header() {
+export default function Header({ filters, filter, onChangeFilterValue }) {
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <ul className={styles.header}>
         <li>
           <HiSun />
         </li>
-        <li>All</li>
-        <li>Active</li>
-        <li>Completed</li>
+        {filters.map((filterValue, idx) => (
+          <li key={idx}>
+            <button onClick={() => onChangeFilterValue(filterValue)}>
+              {filterValue}
+            </button>
+          </li>
+        ))}
       </ul>
-    </div>
+    </header>
   );
 }

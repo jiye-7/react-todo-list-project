@@ -8,7 +8,7 @@
   padding: 1rem 0;
 }
 
-input {
+.container > input {
   height: 2.8rem;
   flex-basis: 75%;
   border-radius: 0.4rem 0 0 0.4rem;
@@ -16,7 +16,7 @@ input {
   font-size: 1rem;
 }
 
-button {
+.container > button {
   height: 2.8rem;
   flex-basis: 15%;
   color: white;
