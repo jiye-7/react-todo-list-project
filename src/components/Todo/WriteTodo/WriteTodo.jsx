@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './WriteTodo.module.css';
 
 export default function WriteTodo({ todos, handleAddTodo }) {
-  const [inputText, setInputText] = useState('');
+  const [text, setInputText] = useState('');
   // 새로운 todo를 만듦
   // input값에 공백이 있을 경우 공백 제거하여 등록
   // 빈 문자열일 때는 등록 안되도록 처리
@@ -10,8 +11,8 @@ export default function WriteTodo({ todos, handleAddTodo }) {
   const handleChange = (e) => setInputText(e.target.value);
 
   const valueExist = () => {
-    if (inputText.trim().length) {
-      createTodo(inputText);
+    if (text.trim().length) {
+      createTodo(text);
     }
   };
 
@@ -20,11 +21,11 @@ export default function WriteTodo({ todos, handleAddTodo }) {
     valueExist();
   };
 
-  const createTodo = (inputText) => {
+  const createTodo = (text) => {
     // 문자열을 가져와서 객체로 만든 후, 해당 배열에 값을 추가한다.
     handleAddTodo({
-      id: todos.length + 1,
-      content: inputText.trim(),
+      id: uuidv4(),
+      content: text,
       status: 'active',
     });
     setInputText('');
@@ -38,7 +39,7 @@ export default function WriteTodo({ todos, handleAddTodo }) {
       <input
         type='text'
         placeholder='Add Todo'
-        value={inputText}
+        value={text}
         onChange={handleChange}
       />
       <button>Add</button>
