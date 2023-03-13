@@ -14,6 +14,16 @@ export default function Main() {
     setTodos((prevTodos) => [...prevTodos, newTodo]);
   };
 
+  // checkbox handler
+  const handleCompleted = (todoId) => {
+    // id가 같은 todo 가져와서 완료/진행중 여부 상태값 변경하고 state update
+  };
+
+  // delete todo
+  const handleDeleteTodo = (todoId) => {
+    setTodos(todos.filter((todo) => todo.id !== todoId));
+  };
+
   useEffect(() => {
     localStorageData = JSON.parse(localStorage.getItem('todos'));
     if (localStorageData) {
@@ -27,7 +37,7 @@ export default function Main() {
 
   return (
     <div className={styles.container}>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
       <WriteTodo todos={todos} handleAddTodo={handleAddTodo} />
     </div>
   );
