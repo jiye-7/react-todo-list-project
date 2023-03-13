@@ -10,7 +10,7 @@ export default function Main() {
   let localStorageData = [];
 
   // create todo
-  const handleCreateTodo = (newTodo) => {
+  const handleAddTodo = (newTodo) => {
     setTodos((prevTodos) => [...prevTodos, newTodo]);
   };
 
@@ -28,7 +28,7 @@ export default function Main() {
   return (
     <div className={styles.container}>
       <TodoList todos={todos} />
-      <WriteTodo todos={todos} handleCreateTodo={handleCreateTodo} />
+      <WriteTodo todos={todos} handleAddTodo={handleAddTodo} />
     </div>
   );
 }
