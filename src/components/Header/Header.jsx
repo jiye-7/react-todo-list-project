@@ -2,20 +2,20 @@ import React from 'react';
 import styles from './Header.module.css';
 import { HiSun } from 'react-icons/hi';
 
-export default function Header({ onChangeFilterValue }) {
-  const handleSelectFilter = (e) => {
-    onChangeFilterValue(e.target.textContent);
-  };
-
+export default function Header({ filters, filter, onChangeFilterValue }) {
   return (
     <header className={styles.container}>
-      <ul className={styles.header} onClick={handleSelectFilter}>
+      <ul className={styles.header}>
         <li>
           <HiSun />
         </li>
-        <li>All</li>
-        <li>Active</li>
-        <li>Completed</li>
+        {filters.map((filterValue, idx) => (
+          <li key={idx}>
+            <button onClick={() => onChangeFilterValue(filterValue)}>
+              {filterValue}
+            </button>
+          </li>
+        ))}
       </ul>
     </header>
   );

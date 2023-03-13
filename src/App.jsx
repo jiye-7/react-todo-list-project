@@ -3,8 +3,10 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import styles from './App.module.css';
 
+const filters = ['all', 'active', 'completed'];
+
 function App() {
-  const [filterValue, setFilterValue] = useState('All');
+  const [filter, setFilterValue] = useState(filters[0]);
 
   const handleChangeFilterValue = (filterValue) => {
     setFilterValue(filterValue);
@@ -12,8 +14,12 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Header onChangeFilterValue={handleChangeFilterValue} />
-      <Main filterValue={filterValue} />
+      <Header
+        filters={filters}
+        filter={filter}
+        onChangeFilterValue={handleChangeFilterValue}
+      />
+      <Main filter={filter} />
     </div>
   );
 }

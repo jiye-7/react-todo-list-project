@@ -3,7 +3,7 @@ import TodoList from '../Todo/TodoList/TodoList';
 import WriteTodo from '../Todo/WriteTodo/WriteTodo';
 import styles from './Main.module.css';
 
-export default function Main({ filterValue }) {
+export default function Main({ filter }) {
   const [todos, setTodos] = useState([]);
   let localStorageData = [];
 
@@ -36,7 +36,7 @@ export default function Main({ filterValue }) {
         todos={todos}
         onUpdate={handleUpdate}
         onDelete={handleDelete}
-        filterValue={filterValue}
+        filter={filter}
       />
       <WriteTodo todos={todos} onAddTodo={handleAdd} />
     </div>
