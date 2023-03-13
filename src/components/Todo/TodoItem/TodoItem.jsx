@@ -2,20 +2,16 @@ import React from 'react';
 import { HiOutlineTrash } from 'react-icons/hi';
 import styles from './TodoItem.module.css';
 
-export default function TodoItem({ todo, handleUpdate, handleDelete }) {
+export default function TodoItem({ todo, onUpdate, onDelete }) {
   const { id, status, content } = todo;
 
-  const handleChange = () => {
-    if (todo.status === 'active') {
-      todo.status = 'completed';
-    } else {
-      todo.status = 'active';
-    }
-    handleUpdate(todo);
+  const handleChange = (e) => {
+    const status = e.target.checked ? 'completed' : 'active';
+    onUpdate({ ...todo, status });
   };
 
   const deleteTodo = () => {
-    handleDelete(id);
+    onDelete(todo);
   };
 
   return (

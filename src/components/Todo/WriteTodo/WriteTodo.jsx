@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './WriteTodo.module.css';
 
-export default function WriteTodo({ todos, handleAddTodo }) {
+export default function WriteTodo({ todos, onAddTodo }) {
   const [text, setInputText] = useState('');
   // 새로운 todo를 만듦
   // input값에 공백이 있을 경우 공백 제거하여 등록
@@ -23,7 +23,7 @@ export default function WriteTodo({ todos, handleAddTodo }) {
 
   const createTodo = (text) => {
     // 문자열을 가져와서 객체로 만든 후, 해당 배열에 값을 추가한다.
-    handleAddTodo({
+    onAddTodo({
       id: uuidv4(),
       content: text,
       status: 'active',
